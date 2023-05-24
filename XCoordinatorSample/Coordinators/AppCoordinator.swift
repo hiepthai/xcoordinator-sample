@@ -10,16 +10,30 @@ class AppCoordinator: NavigationCoordinator<AppRoute> {
     
     init() {
         super.init(initialRoute: .welcome)
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(unwindToHome),
+            name: NSNotification.Name("Authenticated"),
+            object: nil
+        )
     }
     
     override func prepareTransition(for route: AppRoute) -> NavigationTransition {
         switch(route) {
         case .welcome:
-            let coordinator = WelcomeCoordinator()
-            return .presentFullScreen(coordinator, animation: .default)
+            let welcomeCoordinator = WelcomeCoordinator()
+            return .presentFullScreen(welcomeCoordinator, animation: .default)
         case .home:
-            let coordinator = HomeCoordinator()
-            return .presentFullScreen(coordinator, animation: .default)
+            let homeCoordinator = HomeCoordinator()
+            return .multiple(
+                .dismiss(animation: .default),
+                .presentFullScreen(homeCoordinator, animation: .default)
+            )
         }
+    }
+    
+    @objc func unwindToHome() {
+        self.trigger(.home, with: TransitionOptions(animated: false))
     }
 }

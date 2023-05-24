@@ -35,7 +35,7 @@ class AuthViewController: UIViewController {
     }
     
     @objc func didTapButton() {
-        router.trigger(WelcomeRoute.doLogin)
+        NotificationCenter.default.post(name: NSNotification.Name("Authenticated"), object: nil)
     }
     
 }

@@ -4,7 +4,6 @@ import XCoordinator
 enum WelcomeRoute: Route {
     case intro
     case authentication
-    case doLogin
 }
 
 class WelcomeCoordinator: NavigationCoordinator<WelcomeRoute> {
@@ -21,10 +20,6 @@ class WelcomeCoordinator: NavigationCoordinator<WelcomeRoute> {
         case .authentication:
             let viewController = AuthViewController(router: unownedRouter)
             return .push(viewController)
-        case .doLogin:
-            // TODO: https://github.com/QuickBirdEng/XCoordinator/issues/103
-            let homeCoordinator = HomeCoordinator()
-            return .presentFullScreen(homeCoordinator, animation: .default)
         }
     }
 }
