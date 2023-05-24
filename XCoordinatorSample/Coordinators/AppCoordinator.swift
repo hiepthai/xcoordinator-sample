@@ -9,7 +9,12 @@ enum AppRoute: Route {
 class AppCoordinator: NavigationCoordinator<AppRoute> {
     
     init() {
-        super.init(initialRoute: .welcome)
+        let result = Bool.random();
+        if (result) {
+            super.init(initialRoute: .welcome)
+        } else {
+            super.init(initialRoute: .home)
+        }
         
         NotificationCenter.default.addObserver(
             self,
