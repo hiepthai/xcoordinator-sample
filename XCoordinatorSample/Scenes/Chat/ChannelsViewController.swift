@@ -1,4 +1,12 @@
 import Foundation
 import UIKit
 
-class ChannelsViewController: UIViewController {}
+class ChannelsViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        title = "Channels"
+    }
+    
+}

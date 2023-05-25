@@ -9,17 +9,23 @@ enum AppRoute: Route {
 class AppCoordinator: NavigationCoordinator<AppRoute> {
     
     init() {
-        let result = Bool.random();
-        if (result) {
-            super.init(initialRoute: .welcome)
-        } else {
+        if UserDefaults.standard.bool(forKey: "AUTHENTICATED") { // check whether user logged or not
             super.init(initialRoute: .home)
+        } else {
+            super.init(initialRoute: .welcome)
         }
         
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(unwindToHome),
             name: NSNotification.Name("Authenticated"),
+            object: nil
+        )
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(unwindToWelcome),
+            name: NSNotification.Name("Unauthenticated"),
             object: nil
         )
     }
@@ -31,14 +37,19 @@ class AppCoordinator: NavigationCoordinator<AppRoute> {
             return .presentFullScreen(welcomeCoordinator, animation: .default)
         case .home:
             let homeCoordinator = HomeCoordinator()
-            return .multiple(
-                .dismiss(animation: .default),
-                .presentFullScreen(homeCoordinator, animation: .default)
-            )
+            return .presentFullScreen(homeCoordinator)
         }
     }
     
     @objc func unwindToHome() {
-        self.trigger(.home, with: TransitionOptions(animated: false))
+        self.rootViewController.dismiss(animated: false) {
+            self.trigger(.home, with: TransitionOptions(animated: false))
+        }
+    }
+    
+    @objc func unwindToWelcome() {
+        self.rootViewController.dismiss(animated: false) {
+            self.trigger(.welcome, with: TransitionOptions(animated: false))
+        }
     }
 }

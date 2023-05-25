@@ -35,6 +35,7 @@ class AuthViewController: UIViewController {
     }
     
     @objc func didTapButton() {
+        UserDefaults.standard.set(true, forKey: "AUTHENTICATED")
         NotificationCenter.default.post(name: NSNotification.Name("Authenticated"), object: nil)
     }
     
