@@ -2,7 +2,13 @@ import Foundation
 import UIKit
 import XCoordinator
 
-class AuthViewController: UIViewController {
+class AuthViewController: UIViewController, BindableType {
+    var viewModel: AuthViewModel!
+    
+    func bindViewModel() {
+        
+    }
+    
     private let router: UnownedRouter<WelcomeRoute>
 
     init(router: UnownedRouter<WelcomeRoute>) {

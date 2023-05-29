@@ -18,7 +18,10 @@ class WelcomeCoordinator: NavigationCoordinator<WelcomeRoute> {
             let viewController = IntroViewController(router: unownedRouter)
             return .push(viewController)
         case .authentication:
+            let viewModel = AuthViewModel(router: unownedRouter)
             let viewController = AuthViewController(router: unownedRouter)
+            
+            viewController.bind(to: viewModel)
             return .push(viewController)
         }
     }

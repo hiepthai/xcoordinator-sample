@@ -24,6 +24,8 @@
 		EE0302882A1E134300553B06 /* ChatCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0302872A1E134300553B06 /* ChatCoordinator.swift */; };
 		EE03028A2A1E16F800553B06 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0302892A1E16F800553B06 /* ShareView.swift */; };
 		EE03028F2A1E274800553B06 /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE03028E2A1E274800553B06 /* Transition.swift */; };
+		EE8F0E912A24659F001E09C0 /* BindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8F0E902A24659F001E09C0 /* BindableType.swift */; };
+		EE8F0E932A2465B3001E09C0 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8F0E922A2465B3001E09C0 /* AuthViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		EE0302872A1E134300553B06 /* ChatCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCoordinator.swift; sourceTree = "<group>"; };
 		EE0302892A1E16F800553B06 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
 		EE03028E2A1E274800553B06 /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
+		EE8F0E902A24659F001E09C0 /* BindableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableType.swift; sourceTree = "<group>"; };
+		EE8F0E922A2465B3001E09C0 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 				EE03025E2A1E063F00553B06 /* Assets.xcassets */,
 				EE0302602A1E063F00553B06 /* LaunchScreen.storyboard */,
 				EE0302632A1E063F00553B06 /* Info.plist */,
+				EE8F0E902A24659F001E09C0 /* BindableType.swift */,
 			);
 			path = XCoordinatorSample;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 			children = (
 				EE0302752A1E0F5000553B06 /* IntroViewController.swift */,
 				EE0302772A1E0F7900553B06 /* AuthViewController.swift */,
+				EE8F0E922A2465B3001E09C0 /* AuthViewModel.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -235,6 +241,7 @@
 				EE0302812A1E105100553B06 /* ProfileCoordinator.swift in Sources */,
 				EE0302862A1E12C800553B06 /* SearchCoordinator.swift in Sources */,
 				EE0302882A1E134300553B06 /* ChatCoordinator.swift in Sources */,
+				EE8F0E912A24659F001E09C0 /* BindableType.swift in Sources */,
 				EE03028F2A1E274800553B06 /* Transition.swift in Sources */,
 				EE03026E2A1E08FC00553B06 /* AppCoordinator.swift in Sources */,
 				EE0302762A1E0F5000553B06 /* IntroViewController.swift in Sources */,
@@ -242,6 +249,7 @@
 				EE0302702A1E0C3C00553B06 /* WelcomeCoordinator.swift in Sources */,
 				EE0302842A1E116400553B06 /* ProfileViewController.swift in Sources */,
 				EE0302782A1E0F7900553B06 /* AuthViewController.swift in Sources */,
+				EE8F0E932A2465B3001E09C0 /* AuthViewModel.swift in Sources */,
 				EE0302562A1E063D00553B06 /* AppDelegate.swift in Sources */,
 				EE03027F2A1E102200553B06 /* ChannelsViewController.swift in Sources */,
 				EE0302722A1E0D3400553B06 /* HomeCoordinator.swift in Sources */,

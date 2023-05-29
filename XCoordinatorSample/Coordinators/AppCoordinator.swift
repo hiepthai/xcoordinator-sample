@@ -9,11 +9,7 @@ enum AppRoute: Route {
 class AppCoordinator: NavigationCoordinator<AppRoute> {
     
     init() {
-        if UserDefaults.standard.bool(forKey: "AUTHENTICATED") { // check whether user logged or not
-            super.init(initialRoute: .home)
-        } else {
-            super.init(initialRoute: .welcome)
-        }
+        super.init(initialRoute: .welcome)
         
         NotificationCenter.default.addObserver(
             self,
